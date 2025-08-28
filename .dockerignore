@@ -1,0 +1,28 @@
+# Dependencies and build output
+node_modules
+coverage
+dist
+
+# Keep lockfile for reproducible builds
+# (pnpm-lock.yaml intentionally NOT ignored)
+
+# Env / secrets
+.env
+*.local
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# IDE/editor
+.vscode
+.idea
+*.swp
+
+# Git
+.git
+.gitignore
+
+# Misc
+.DS_Store
