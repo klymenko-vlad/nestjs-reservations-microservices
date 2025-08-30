@@ -28,6 +28,7 @@ export class UsersService {
       await this.usersRepository.findOne({
         email: createUserDto.email,
       });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return;
     }
