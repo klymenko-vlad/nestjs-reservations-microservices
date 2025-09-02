@@ -27,12 +27,28 @@ services:
       dockerfile: ./apps/payments/Dockerfile
       target: development
     command: pnpm run start:dev payments
-    ports:
-      - "3003:3003"
     env_file:
       - ./apps/payments/.env
     volumes:
       - ./apps/payments:/usr/src/app/apps/payments
+      - ./libs:/usr/src/app/libs
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=1
+      - CHOKIDAR_INTERVAL=300
+      - WATCHPACK_POLLING=true
+      - WATCHPACK_POLLING_INTERVAL=300
+
+  notifications:
+    build:
+      context: .
+      dockerfile: ./apps/notifications/Dockerfile
+      target: development
+    command: pnpm run start:dev notifications
+    env_file:
+      - ./apps/notifications/.env
+    volumes:
+      - ./apps/notifications:/usr/src/app/apps/notifications
       - ./libs:/usr/src/app/libs
     environment:
       - NODE_ENV=development
