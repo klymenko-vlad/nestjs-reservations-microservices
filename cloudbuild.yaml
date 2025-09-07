@@ -1,0 +1,60 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/reservations/production',
+      '-f',
+      'apps/reservations/Dockerfile',
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/reservations/production',
+    ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/auth/production',
+      '-f',
+      'apps/auth/Dockerfile',
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/auth/production',
+    ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/payments/production',
+      '-f',
+      'apps/payments/Dockerfile',
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/payments/production',
+    ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/notifications/production',
+      '-f',
+      'apps/notifications/Dockerfile',
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      'europe-central2-docker.pkg.dev/eternal-cocoa-446320-u0/notifications/production',
+    ]
