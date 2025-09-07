@@ -192,6 +192,8 @@ importers:
         specifier: 18.5.0
         version: 18.5.0(@types/node@24.3.1)
 
+  apps/reservations: {}
+
 packages:
 
   '@angular-devkit/core@19.2.15':
