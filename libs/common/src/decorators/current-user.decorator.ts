@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Request } from 'express';
-import { UserDocument } from '../../../../apps/auth/src/users/models/user.schema';
+import { UserDocument } from '@app/common';
 
 type AuthenticatedRequest = Request & { user: UserDocument };
 
