@@ -26,6 +26,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
             cookies?.Authentication ||
             (request as unknown as { Authentication?: string })
               ?.Authentication ||
+            (request.headers.authentication as string) ||
             null
           );
         },

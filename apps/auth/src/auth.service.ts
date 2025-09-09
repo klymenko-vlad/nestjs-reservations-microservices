@@ -34,5 +34,7 @@ export class AuthService {
       expires,
       // sameSite: 'lax',
     });
+
+    return token;
   }
 }
