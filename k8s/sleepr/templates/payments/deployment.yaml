@@ -31,3 +31,13 @@ spec:
                   key: apiKey
           ports:
             - containerPort: 3001
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+              ephemeral-storage: 1Gi
+            limits:
+              cpu: 250m
+              memory: 512Mi
+              ephemeral-storage: 1Gi
+
